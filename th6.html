@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TẠO TODOLIST TRONG OBJECT</title>
+</head>
+<body>
+    <script>
+    const todoList = [
+        {id: 1, todo: "Have breakfast", completed: false},
+        {id: 2, todo: "Have breakfast", completed: true},
+        {id: 3, todo: "Have breakfast", completed: false},
+    ];
+    // Tạo hàm có tên là newTodo() truyển vào tham số todo là các việc cần làm
+    function addTodo(todo) {
+       let newld = 0;
+       for(let i = 0;i<todoList.length; i ++){
+        newld = todoList.length + 1 ;
+       }
+        let newTodo ={
+            id :newld,
+            todo: todo,
+            completed: false,
+        };
+        todoList.push(newTodo);
+     
+    }
+    addTodo("hihi");
+    console.log(todoList);
+
+    // Tạo hàm updateTodo() để cập nhật lại trạng thái cho công việc
+    function updateTodo(id,newTodo) {
+        let findIndex = todoList.findIndex((e)=>{
+            return id === e.id});
+        todoList[findIndex].todo = newTodo ;
+        todoList[findIndex].completed = false;
+    }
+    updateTodo(2, "di tam");
+    console.log(todoList);
+
+    // Bước 4: Tạo hàm removeTodo() để cập nhật lại trạng thái cho công việc
+
+    function  removeTodo(id) {
+        let check = -1;
+        for(let i = 0; i<todoList.length; i++){
+            if(id == todoList[i].id){
+                check = i;
+            }
+        }
+        todoList.splice(check,1);
+    }
+    removeTodo(3);
+    console.log(todoList);
+    </script>
+</body>
+</html>

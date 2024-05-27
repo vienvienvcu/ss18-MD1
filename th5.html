@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       
+        let staff = {
+            id : 1,
+            name: "Ronaldo",
+            age : 30,
+            Salary: 1000,
+        };
+      
+        // // // them moi
+        // staff.dress = "my";
+        // newStaff1.dress ="phap";
+        // newStaff2.dress = "anh";
+        let company = [];
+        company.push(staff);
+        // company.push(newStaff1);
+        // company.push(newStaff2);
+        // console.log(company);
+        
+        // let inputUpdate = Number(prompt("nhap vao id nhan vien muon cap nhat"));
+        // let updateSalary = Number(prompt("nhap vao muc luong muon thay doi"));
+
+        // let findIndex = company.findIndex((e)=> inputUpdate = e.id);
+        // company[findIndex].salary = updateSalary;
+        // console.log(company);
+        let state = true;
+       
+        while (state) {
+            let input = 
+             prompt("Nhập vàoC/R/U/D/E để tiếp tục chương trình").toLocaleLowerCase();
+             if(input == "c"){
+                // them moi nhan vien vao trong mang tren
+                
+                let newName = prompt("Nhập tên nhân viên muốn thêm");
+                let newId = Number(prompt("Nhập id "));
+                let newAge = Number(prompt("Nhập tuổi nhân viên muốn thêm"));
+                let newSalary = Number(prompt("Nhập mức lương của nhân viên muốn thêm"));
+                let newStaff = {
+                    id: newId,
+                    name:newName,
+                    age: newAge,
+                    Salary: newSalary,
+                }
+                company.push(newStaff);
+                console.log(company);
+            }
+            else if(input == "u"){
+                let inputUpdate = Number(prompt("Nhập vào id nhân viên muốn cập nhật"));
+                let updateSalary = Number(prompt("Nhập mức lương muốn thay đổi"));
+                let findIndex = company.findIndex((e)=>inputUpdate==e.id);
+                company[findIndex].Salary = updateSalary;
+                console.log(company);
+            }
+            else if(input == "d"){
+                let inputDelete = Number(prompt("Nhập vào id nhân viên muốn xóa"));
+                let findIndex = company.findIndex((e)=>inputDelete ==e.id);
+                company.splice(findIndex,1);
+                console.log(company);
+             }else if(input == "e"){
+                alert("thank your for")
+                state=false;    
+
+             }
+        }
+
+    </script>
+</body>
+</html>

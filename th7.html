@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUYỆN TẬP VÀ THAO TÁC ĐỐI TƯỢNG
+        OBJECT</title>
+</head>
+<body>
+    <script>
+    let players = {
+    name: "Messi",
+    age: 30,
+    nation: "Argentine",
+    club: "PSG",
+    };
+    players.email = "messi@gmail.com"
+    console.log(players);
+    players.club="Barcelona";
+    for (const key in players) {
+        console.log(`${key}: ${players[key]}`);
+        
+    }
+    // 
+    delete players.age;
+    for (const key in players) {
+        console.log(`${key}: ${players[key]}`);
+        
+    }
+    </script>
+</body>
+</html>
